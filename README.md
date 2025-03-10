@@ -173,21 +173,40 @@ This is a modern, minimalistic homepage for Agent Studio. It provides informatio
 This project is set up to be deployed with Vercel. Follow these steps to deploy:
 
 1. **Push to GitHub**
-   - Create a new GitHub repository
-   - Push this project to the repository
+   - This project is already pushed to GitHub at https://github.com/mrmoe28/N8N-Agent.git
+   - If you've made changes, commit and push them to your repository
 
 2. **Connect to Vercel**
    - Go to [Vercel](https://vercel.com)
    - Sign up or log in (you can use your GitHub account)
    - Click "New Project"
-   - Import your GitHub repository
-   - Configure the project settings (the defaults should work fine)
-   - Click "Deploy"
+   - Import your GitHub repository (mrmoe28/N8N-Agent)
+   - Configure the project settings:
+     - Framework Preset: Next.js (should be auto-detected)
+     - Root Directory: `./` (leave as default)
+     - Build Command: `next build` (should be auto-detected)
+     - Output Directory: `.next` (should be auto-detected)
+   
+3. **Environment Variables**
+   - Add the following environment variables from your `.env` file:
+     - `LLM_MODEL` (e.g., gpt-4o or claude-3-5-sonnet-20240620)
+     - `EMBEDDING_MODEL` (e.g., text-embedding-3-small)
+     - `OPENAI_API_KEY` (if using a GPT model)
+     - `ANTHROPIC_API_KEY` (if using a Claude model)
+     - `SUPABASE_URL`
+     - `SUPABASE_SERVICE_KEY`
 
-3. **Customize Domain (Optional)**
+4. **Deploy**
+   - Click "Deploy"
+   - Vercel will build and deploy your project
+   - Once deployment is complete, you'll receive a URL to access your application
+
+5. **Customize Domain (Optional)**
    - After deployment, go to the project settings
    - Navigate to the "Domains" section
    - Add your custom domain
+
+For more detailed instructions, see the `vercel-deploy-instructions.md` file.
 
 ## Local Development
 
